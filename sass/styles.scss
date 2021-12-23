@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+// ----------------------------------------------------------------
+// Bulma
+// ----------------------------------------------------------------
+// Colors
+$black: #191919;
+$blue: #2D4263;
+$electric: #105652;
+$orange: #C84B31;
+$red: #B91646;
+$white: #FFFFFF;
+
+// Link Color
+$link: $orange;
+$link-hover: $red;
+
+// Card Color
+$card-background-color: $black;
+
+// Text Formatting Colors
+$strong-color: $electric;
+
+// Footer
+$footer-background-color: $blue;
+$footer-padding: 0.5em;
+
+// Bulma Import
+@import "../node_modules/bulma/bulma.sass";
+
+
+// ----------------------------------------------------------------
+// Font Awesome
+// ----------------------------------------------------------------
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<!--Header-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoon | Login</title>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth/authStyles.css">
+
+    <!--Scripts-->
+    <script src="../js/auth/loginScripts.js"/>
+
+    <!--Icons-->
+    <script defer src=""></script>
+</head>
+
+<!--Body-->
+
+<body background="../img/login-background.jpg">
+    <div class="center-card">
+        <div class="card">
+            <div class="card-content">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="usernameInput" class="input" type="email" placeholder="Username">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="passwordInput" class="input" type="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button id="loginButton" class="button is-success" onclick="login()">
+                            Login
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!--Footer-->
+
+<footer class="footer">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            <strong>Fotoon</strong> by <a href="https://github.com/C-O-D-R">CODR</a> | The source code is licensed under
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a> and website styles are provided by <a
+                href="https://bulma.io">Bulma</a>
+        </p>
+    </div>
+</footer>
