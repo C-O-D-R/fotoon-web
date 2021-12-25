@@ -6,19 +6,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotoon | Register</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
 
     <!--Stylesheet-->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/auth/authStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/auth/authStyles.css">
 
-    <!--Icons-->
-    <script defer src=""></script>
+    <!--Scripts-->
+    <script src="/js/auth/registerScripts.js"></script>
 </head>
 
 <!--Body-->
 
-<body background="">
+<body background="/img/register-background.jpg">
+    <div class="media m-2" id="logo">
+        <div class="media-left">
+            <figure class="image is-48x48">
+                <img src="/img/logo-big.jpg" width="64" height="64" alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="media-content">
+            <a href="/">
+                <p class="is-size-4"><strong>Fotoon</strong></p>
+                <p class="is-size-7"><strong>Photo Social Club</strong></p>
+            </a>
+        </div>
+    </div>
 
+    <div class="center-card">
+        <div class="card">
+            <div class="card-content">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="usernameInput" class="input" type="email" placeholder="Username">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="passwordInput" class="input" type="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button id="registerButton" class="button" onclick="register()">
+                            Register
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <!--Footer-->
