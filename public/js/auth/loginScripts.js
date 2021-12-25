@@ -38,7 +38,7 @@ async function authorize (options) {
         }).then((res) => res.json());
 
         if (response.code === 'login_success') {
-            localStorage.setItem('token', response.data.token);
+            document.cookie =`token=${response.data.token}; path=/`;
             return true;
         }
 

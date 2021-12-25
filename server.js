@@ -2,6 +2,7 @@
 // Imports
 // ----------------------------------------------------------------
 // Globals
+import './globals/Authorization.js';
 import './globals/Terminal.js';
 
 // DOTENV
@@ -15,12 +16,16 @@ import https from 'https';
 // Express
 import express from 'express';
 
+// Cookie Parser
+import cookieParser from 'cookie-parser';
+
 
 // ----------------------------------------------------------------
 // Main Code
 // ----------------------------------------------------------------
 // Server
 const Server = express();
+Server.use(cookieParser());
 Server.use(express.static('public'));
 Server.use('/css', express.static('public/css'));
 Server.use('/js', express.static('public/js'));
