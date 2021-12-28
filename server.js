@@ -38,10 +38,12 @@ Server.set('view engine', 'ejs');
 // Route Imports
 import root from './routes/root.js'; // Import Root Routes
 import auth from './routes/auth.js'; // Import Auth Routes
+import user from './routes/user.js'; // Import User Routes
 
 // Route Uses
 Server.use('/', root); // Use Root Routes
 Server.use('/auth', auth); // Use Auth Routes
+Server.use('/user', user); // Use User Routes
 
 // HTTPS Server
 if (process.env.DEV_MODE == 'true') {

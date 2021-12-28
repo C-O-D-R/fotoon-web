@@ -22,7 +22,6 @@ Router.get('/login', (req, res) => {
 });
 
 // Register
-Router.get('/register', authUser, (req, res) => {
-    console.log(req.user.id)
+Router.get('/register', (req, res) => {
     res.render('./auth/register');
 });

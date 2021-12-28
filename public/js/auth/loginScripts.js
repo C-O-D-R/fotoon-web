@@ -15,7 +15,8 @@ async function login() {
 
     // Wait for authentication to complete
     if (await authorize(options)) {
-        alert('Success!');
+        button.classList.remove('is-loading');
+        window.location.replace('/user');
     }
 }
 

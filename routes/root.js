@@ -17,8 +17,10 @@ export default Router;
 // Routes
 // ----------------------------------------------------------------
 // Main Page
-Router.get('/', (req, res) => {
-    res.render('index', {
-        test: 'hello'
-    });
+Router.get('/', async (req, res) => {
+    if (await authSession(req)) {
+        res.redirect('/user');
+    } else {
+        res.render('index');
+    }
 });
