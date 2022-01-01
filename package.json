@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon .",
-    "css-build": "node-sass --omit-source-map-url sass/styles.scss public/css/styles.css"
+    "css-build": "node-sass --omit-source-map-url sass/styles.scss public/css/styles.css",
+    "build": "docker build . -t codr/fotoon-web"
   },
   "repository": {
     "type": "git",
