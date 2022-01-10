@@ -5,9 +5,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "start": "node .",
     "dev": "nodemon .",
-    "css-build": "node-sass --omit-source-map-url sass/styles.scss public/css/styles.css",
-    "build": "docker build . -t codr/fotoon-web"
+    "sass-build": "node-sass --omit-source-map-url sass/styles.scss public/css/styles.css",
+    "docker-build": "docker build . -t codr/fotoon-web"
   },
   "repository": {
     "type": "git",
