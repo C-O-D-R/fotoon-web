@@ -22,7 +22,7 @@ global.authUser = async function (req, res, next) {
 
     // Token Validation
     try {
-        var user = jwt.verify(token, process.env.SERVER_JWT_SECRET);
+        var user = jwt.verify(token, process.env.JWT_SECRET);
         userId = user.id;
     } catch (error) {
         return res.redirect('/');
@@ -43,7 +43,7 @@ global.authSession = async function (req) {
 
     // Token Validation
     try {
-        var user = jwt.verify(token, process.env.SERVER_JWT_SECRET);
+        var user = jwt.verify(token, process.env.JWT_SECRET);
         userId = user.id;
     } catch (error) {
         return false;

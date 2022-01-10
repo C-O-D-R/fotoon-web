@@ -49,7 +49,7 @@ Server.use('/auth', auth); // Use Auth Routes
 Server.use('/user', user); // Use User Routes
 
 // HTTPS Server
-if (process.env.DEV_MODE == 'true') {
+if (process.env.DEV_MODE.toLowerCase() == 'true') {
     // Port
     const port = process.env.PORT || 80;
 
