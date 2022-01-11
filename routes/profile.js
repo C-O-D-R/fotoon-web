@@ -45,10 +45,7 @@ Router.get('/', authUser, async (req, res) => {
         
     }
 
-
-    var responsePosts = await(`https://api.fotoon.app/u`)
-
-    var user = response.data;
+    var user = responseUser.data;
 
     res.render('./profile/profile', {
         user: user,
