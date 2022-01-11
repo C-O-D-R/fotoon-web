@@ -3,6 +3,7 @@
 <!--Header-->
 
 <head>
+    <!--Meta-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotoon | Login</title>
@@ -10,10 +11,10 @@
 
     <!--Stylesheets-->
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/auth/authStyles.css">
+    <link rel="stylesheet" href="/css/auth/login/style.css">
 
     <!--Scripts-->
-    <script src="/js/auth/loginScripts.js"></script>
+    <script src="/js/auth/login.js"></script>
 </head>
 
 <!--Body-->
@@ -42,6 +43,8 @@
                         <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
+
+                        <p class="help is-danger" id="usernameHelper"></p>
                     </p>
                 </div>
                 <div class="field">
@@ -50,6 +53,8 @@
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
+
+                        <p class="help is-danger" id="passwordHelper"></p>
                     </p>
                 </div>
                 <div class="field">
@@ -57,6 +62,8 @@
                         <button id="loginButton" class="button is-success" onclick="login()">
                             Login
                         </button>
+
+                        <p class="help is-danger" id="loginButtonHelper"></p>
                     </p>
                 </div>
             </div>

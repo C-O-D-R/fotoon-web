@@ -39,14 +39,19 @@ Server.set('view engine', 'ejs');
 
 // Web
 // Route Imports
-import root from './routes/root.js'; // Import Root Routes
-import auth from './routes/auth.js'; // Import Auth Routes
-import user from './routes/user.js'; // Import User Routes
+import mainpage from './routes/mainpage.js';    // fotoon.app/
+import login from './routes/login.js';          // fotoon.app/login
+import register from './routes/register.js';    // fotoon.app/register
+import profile from './routes/profile.js';      // fotoon.app/profile
+// fotoon.app/account
+// fotoon.app/posts
+// fotoon.app/post
 
 // Route Uses
-Server.use('/', root); // Use Root Routes
-Server.use('/auth', auth); // Use Auth Routes
-Server.use('/user', user); // Use User Routes
+Server.use('/', mainpage);          // Main Page
+Server.use('/login', login);        // Login Page
+Server.use('/register', register);  // Register Page
+Server.use('/profile', profile);    // Profile Page
 
 // HTTPS Server
 if (process.env.DEV_MODE.toLowerCase() == 'true') {

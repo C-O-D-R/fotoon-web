@@ -3,6 +3,7 @@
 <!--Header-->
 
 <head>
+    <!--Meta-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotoon | Register</title>
@@ -11,10 +12,10 @@
 
     <!--Stylesheet-->
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/auth/authStyles.css">
+    <link rel="stylesheet" href="/css/auth/register/style.css">
 
     <!--Scripts-->
-    <script src="/js/auth/registerScripts.js"></script>
+    <script src="/js/auth/register.js"></script>
 </head>
 
 <!--Body-->
@@ -44,6 +45,8 @@
                             <i class="fas fa-envelope"></i>
                         </span>
                     </p>
+
+                    <p class="help is-danger" id="usernameHelper"></p>
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
@@ -52,6 +55,8 @@
                             <i class="fas fa-lock"></i>
                         </span>
                     </p>
+
+                    <p class="help is-danger" id="passwordHelper"></p>
                 </div>
                 <div class="field">
                     <p class="control">
@@ -59,6 +64,8 @@
                             Register
                         </button>
                     </p>
+
+                    <p class="help is-danger" id="registerButtonHelper"></p>
                 </div>
             </div>
         </div>

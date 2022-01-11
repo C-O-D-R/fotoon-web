@@ -12,6 +12,21 @@ import jwt from 'jsonwebtoken';
 // -------------------------------------------------------------
 // Globals
 // -------------------------------------------------------------
+// User Logged In?
+global.loggedIn = async function (req) {
+    // Request Token
+    const token = req.cookies.token;
+
+    // Token Validation
+    try {
+        jwt.verify(token, process.env.JWT_SECRET);
+    } catch (error) {
+        return false;
+    }
+
+    return true;
+}
+
 // User Password Authentication
 global.authUser = async function (req, res, next) {
     // Variables
@@ -23,7 +38,8 @@ global.authUser = async function (req, res, next) {
     // Token Validation
     try {
         var user = jwt.verify(token, process.env.JWT_SECRET);
-        userId = user.id;
+        console.log(user);
+
     } catch (error) {
         return res.redirect('/');
     }
@@ -31,23 +47,4 @@ global.authUser = async function (req, res, next) {
     req['user'] = { id: userId };
 
     next();
-}
-
-// User Session Authentication
-global.authSession = async function (req) {
-    // Variables
-    var userId;
-
-    // Request Token
-    const token = req.cookies.token;
-
-    // Token Validation
-    try {
-        var user = jwt.verify(token, process.env.JWT_SECRET);
-        userId = user.id;
-    } catch (error) {
-        return false;
-    }
-
-    return true;
 }
