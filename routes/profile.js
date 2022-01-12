@@ -45,6 +45,8 @@ Router.get('/', authUser, async (req, res) => {
         
     }
 
+    console.log(responseUser)
+
     var user = responseUser.data;
 
     res.render('./profile/profile', {
