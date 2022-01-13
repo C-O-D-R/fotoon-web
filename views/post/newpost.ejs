@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoon | New Post</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/newpost/style.css">
+
+    <!--Scripts-->
+    <script src="js/general/navbar.js"></script>
+    <script src="js/post/newpost.js"></script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand" id="logo">
+            <a class="navbar-item" href="/">
+                <img src="img/logo-big.jpg" width="30" height="30">
+                <p class="is-size-4 ml-2"><strong>Fotoon</strong></p>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Search
+                </a>
+
+                <a class="navbar-item">
+                    Create a Post
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <%= user.username %>
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            Posts
+                        </a>
+
+                        <a class="navbar-item">
+                            Profile
+                        </a>
+
+                        <a class="navbar-item">
+                            Account
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item" onclick="logout()">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="center-card">
+        <div class="card">
+            <div class="card-content">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input id="usernameInput" class="input" type="email" placeholder="Caption">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                    <div class="file">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="resume">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button id="loginButton" class="button is-success" onclick="login()">
+                            Login
+                        </button>
+
+                    <p class="help is-danger" id="loginButtonHelper"></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.querySelector('#file-js-example input[type=file]');
+        fileInput.onchange = () => {
+          if (fileInput.files.length > 0) {
+            const fileName = document.querySelector('#file-js-example .file-name');
+            fileName.textContent = fileInput.files[0].name;
+          }
+        }
+      </script>
+</body>
+
+<!--Footer-->
+
+<footer class="footer">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            <strong>Fotoon</strong> by <a href="https://github.com/C-O-D-R">CODR</a> | The source code is licensed under
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a> and website styles are provided by <a
+                href="https://bulma.io">Bulma</a>
+        </p>
+    </div>
+</footer>
