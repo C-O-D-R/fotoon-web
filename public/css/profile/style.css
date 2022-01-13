@@ -4,7 +4,7 @@ html {
 
 body {
     min-height: 100%;
-    background-size: cover; 
+    background-color: #191A19; 
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -20,6 +20,6 @@ footer {
 }
 
 #logo a {
-    color: #93FFD8;
+    color: #950740;
     text-decoration: none;
 }

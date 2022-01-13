@@ -18,6 +18,6 @@ export default Router;
 // ----------------------------------------------------------------
 // Main Page
 Router.get('/', async (req, res) => {
-    if (await loggedIn(req)) res.redirect('/posts');
+    if (await loggedIn(req)) res.redirect('/post');
     else res.render('mainpage');
 });

@@ -4,30 +4,45 @@
 // Bulma
 // ----------------------------------------------------------------
 // Colors
-$black: #191919;
-$blue: #2D4263;
-$blue-neon: #93FFD8;
-$electric: #105652;
-$orange: #C84B31;
-$red: #B91646;
 $white: #FFFFFF;
+$darklight: #282828;
+$darkdark: #191A19;
+$bluelight: #3500D3;
+$bluedark: #240090;
+$redlight: #C3073F;
+$reddark: #950740;
 
-// Link Color
-$link: $orange;
-$link-hover: $red;
-
-// Card Color
-$card-background-color: $orange;
-
-// Text Formatting Colors
-$strong-color: $blue-neon;
+// Card
+$card-background-color: $darkdark;
 
 // Footer
-$footer-background-color: $blue;
+$footer-background-color: $darkdark;
 $footer-padding: 0.5em;
 
+// Text
+$text: $white;
+$text-strong: $redlight;
+
+// Link
+$link: $bluedark;
+$link-visited: $bluedark;
+$link-hover: $bluelight;
+
+// Input
+$input-color: $white;
+$input-background-color: $darklight;
+$input-border-color: $darklight;
+$input-hover-border-color: $redlight;
+$input-focus-border-color: $redlight;
+$input-focus-box-shadow-color: $reddark;
+$input-focus-box-shadow-size: 0 0 0 0.05em;
+
 // Navbar
-$navbar-background-color: $blue-neon;
+$navbar-background-color: $darklight;
+$navbar-box-shadow-size: 0 0 0 0;
+$navbar-item-hover-color: $reddark;
+$navbar-dropdown-arrow: $reddark;
+$navbar-item-hover-background-color: $darkdark;
 
 // Bulma Import
 @import "../node_modules/bulma/bulma.sass";

@@ -36,7 +36,7 @@ async function login() {
     if (response.code == 'login_success') 
     {
         document.cookie =`token=${response.data.token}; path=/`;
-        window.location.replace('/posts');
+        window.location.replace('/post');
     }
 
     // 401

@@ -38,13 +38,12 @@ global.authUser = async function (req, res, next) {
     // Token Validation
     try {
         var user = jwt.verify(token, process.env.JWT_SECRET);
-        console.log(user);
+        userId = user.id;
 
+        req['user'] = { id: userId };
+
+        next();
     } catch (error) {
         return res.redirect('/');
     }
-
-    req['user'] = { id: userId };
-
-    next();
 }
