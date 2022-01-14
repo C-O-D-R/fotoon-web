@@ -46,7 +46,7 @@ async function submit() {
     // API
     console.log(document.cookie.split('=')[1])
     var response = await fetch('https://api.fotoon.app/post', {
-        method: 'POST',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             image: encodedImage,

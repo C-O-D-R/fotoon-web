@@ -44,14 +44,15 @@ import login from './routes/login.js';          // fotoon.app/login
 import register from './routes/register.js';    // fotoon.app/register
 import profile from './routes/profile.js';      // fotoon.app/profile
 // fotoon.app/account
-// fotoon.app/post
-import newpost from './routes/newpost.js'; // fotoon.app/newpost
+import post from './routes/post.js';            // fotoon.app/post
+import newpost from './routes/newpost.js';      // fotoon.app/newpost
 
 // Route Uses
 Server.use('/', mainpage);          // Main Page
 Server.use('/login', login);        // Login Page
 Server.use('/register', register);  // Register Page
 Server.use('/profile', profile);    // Profile Page
+Server.use('/post', post);          // Post Page
 Server.use('/newpost', newpost);    // New Post Page
 
 // HTTPS Server

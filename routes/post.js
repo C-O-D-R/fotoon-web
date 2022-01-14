@@ -4,6 +4,8 @@
 // Express
 import express from 'express';
 
+// Fetch
+import fetch from 'node-fetch';
 
 // ----------------------------------------------------------------
 // Router
@@ -31,23 +33,24 @@ Router.get('/', authUser, async (req, res) => {
             }
         }).then((res) => res.json());
 
-        responsePost = await fetch(`https://api.fotoon.app/posts`, {
-            method: 'GET',
+        responsePost = await fetch(`https://api.fotoon.app/post/follows`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: {
-                ids: [responseUser.following]
-            }
-        });
-
-        console.log(responsePost.data.at(-1)._id)
+            body: JSON.stringify({
+                token: req.cookies.token
+            })
+        }).then((res) => res.json());
     } catch (error) {
-        
+        console.log(error);
     }
+    
+    if (responsePost.data.at(-1) == undefined) return res.redirect('/profile');
+    else return res.redirect(`/post/${responsePost.data.at(-1)._id}`);
 });
 
 // Post by ID
 Router.get('/:id', authUser, async (req, res) => {
-
+    res.send(200);
 });

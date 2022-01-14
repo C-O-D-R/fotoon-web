@@ -1,132 +1,115 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotoon | Profile</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotoon | Profile</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 
-    <!--Stylesheets-->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/profile/style.css">
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/profile/style.css">
 
-    <!--Scripts-->
-    <script src="js/general/navbar.js"></script>
-    <script src="js/user/userScripts.js"></script>
+  <!--Scripts-->
+  <script src="js/general/navbar.js"></script>
+  <script src="js/user/userScripts.js"></script>
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand" id="logo">
-            <a class="navbar-item" href="/">
-                <img src="img/logo-big.jpg" width="30" height="30">
-                <p class="is-size-4 ml-2" ><strong>Fotoon</strong></p>
-            </a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand" id="logo">
+      <a class="navbar-item" href="/">
+        <img src="img/logo-big.jpg" width="30" height="30">
+        <p class="is-size-4 ml-2"><strong>Fotoon</strong></p>
+      </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item">
-                    Search
-                </a>
-
-                <a class="navbar-item">
-                    Create a Post
-                </a>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        <%= user.username %>
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                            Posts
-                        </a>
-
-                        <a class="navbar-item">
-                            Profile
-                        </a>
-
-                        <a class="navbar-item">
-                            Account
-                        </a>
-
-                        <hr class="navbar-divider">
-
-                        <a class="navbar-item" onclick="logout()">
-                            Logout
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-64x64">
-                <img class="is-rounded is-1by1" src="<%= profile.avatar %>" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4"><%= profile.username %></p>
-              <p class="subtitle is-6"><%= profile.shortBio %></p>
-            </div>
-          </div>
-      
-          <div class="content">
-            <%= profile.longBio %>
-          </div>
-        </div>
-
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Hello World</p>
-                <p class="subtitle">What is up?</p>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Foo</p>
-                <p class="subtitle">Bar</p>
-              </article>
-            </div>
-
-            
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title">Third column</p>
-                <p class="subtitle">With some content</p>
-                <div class="content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                </div>
-              </article>
-            </div>
-          </div>
-      </div>
-</body>
-
-<!--Footer-->
-
-<footer class="footer">
-    <div class="content has-text-centered has-text-white">
-        <p>
-            <strong>Fotoon</strong> by <a href="https://github.com/C-O-D-R">CODR</a> | The source code is licensed under
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a> and website styles are provided by <a
-                href="https://bulma.io">Bulma</a>
-        </p>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-</footer>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Search
+        </a>
+
+        <a class="navbar-item" href="/newpost">
+          Create a Post
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <%= user.username %>
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/post">
+              Posts
+            </a>
+
+            <a class="navbar-item" href="/profile">
+              Profile
+            </a>
+
+            <a class="navbar-item" href="/account">
+              Account
+            </a>
+
+            <hr class="navbar-divider">
+
+            <a class="navbar-item" onclick="logout()">
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img class="is-rounded is-1by1" src="<%= profile.avatar %>" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">
+            <%= profile.username %>
+          </p>
+          <p class="subtitle is-6">
+            <%= profile.shortBio %>
+          </p>
+        </div>
+      </div>
+
+      <div class="content">
+        <%= profile.longBio %>
+      </div>
+    </div>
+
+    <%var pos=0;%>
+    <%for (var i=0; i < Math.ceil(posts.length / 3); i++) {%>
+      <div class="columns mx-6">
+      <%for (var j=0; j < 3; j++) {%>
+        <% if(posts[pos] == undefined) posts[pos] = { _id: undefined, image: undefined } %>
+        <%var postId=posts[pos]._id == undefined ? ' ' : posts[pos]._id;%>
+        <%var postImage=posts[pos].image == undefined ? ' ': posts[pos].image;%>
+        <div class="column">
+          <a href="<%= postId %>">
+            <img src="<%= postImage %>" >
+          </a>
+        </div>
+        <%pos=pos+1;%>
+      <%}%>
+      </div>
+    <%}%>
+  </div>
+  </div>
+</body>
