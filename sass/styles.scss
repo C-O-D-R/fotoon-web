@@ -44,6 +44,10 @@ $navbar-item-hover-color: $reddark;
 $navbar-dropdown-arrow: $reddark;
 $navbar-item-hover-background-color: $darkdark;
 
+// File Upload
+$file-cta-background-color: $darklight;
+$file-border-color: $darklight;
+
 // Bulma Import
 @import "../node_modules/bulma/bulma.sass";
 

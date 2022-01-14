@@ -20,5 +20,58 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
 });
+
+async function submit() {
+    // Variables
+    var files = document.getElementById('fileInput').files;
+    var submitButton = document.getElementById('submitButton');
+    var caption = document.getElementById('captionInput').value;
+    var encodedImage;
+
+    // Helper Text Variables
+    var submitButtonHelper = document.getElementById('submitButtonHelper');
+    submitButtonHelper.innerHTML = '';
+
+    // Loading Animation
+    submitButton.classList.add('is-loading');
+
+    if (files.length > 2) {
+        submitButton.classList.remove('is-loading');
+        return alert('Only one file can be uploaded!');
+    }
+
+    if (files.length > 0) encodedImage = await encode(files[0]);
+
+    // API
+    console.log(document.cookie.split('=')[1])
+    var response = await fetch('https://api.fotoon.app/post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            image: encodedImage,
+            caption: caption,
+            token: document.cookie.split('=')[1]
+        })
+    }).then((res) => res.json());
+
+    if (response) { 
+        submitButton.classList.remove('is-loading');
+        console.log(response)
+        if (response.status == 'error') return submitButtonHelper.innerHTML = response.description;
+        if (response.status == 'success') return alert('Image uploaded successfully!');
+    }
+}
+
+async function encode(file) {
+    return new Promise((resolve, reject) => {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            resolve(reader.result);
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    });
+}

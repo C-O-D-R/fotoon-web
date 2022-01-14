@@ -77,9 +77,9 @@
             <div class="card-content">
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input id="usernameInput" class="input" type="email" placeholder="Caption">
+                        <input id="captionInput" class="input" type="text" placeholder="Caption">
                         <span class="icon is-small is-left">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-paragraph"></i>
                         </span>
                     </p>
                 </div>
@@ -87,13 +87,13 @@
                     <p class="control has-icons-left">
                     <div class="file">
                         <label class="file-label">
-                            <input class="file-input" type="file" name="resume">
+                            <input class="file-input" type="file" name="resume" id="fileInput" accept="image/*">
                             <span class="file-cta">
                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>
                                 </span>
                                 <span class="file-label">
-                                    Choose a file…
+                                    Upload an Image…
                                 </span>
                             </span>
                         </label>
@@ -102,26 +102,16 @@
                 </div>
                 <div class="field">
                     <p class="control">
-                        <button id="loginButton" class="button is-success" onclick="login()">
-                            Login
+                        <button id="submitButton" class="button is-success" onclick="submit()">
+                            Submit
                         </button>
 
-                    <p class="help is-danger" id="loginButtonHelper"></p>
+                    <p class="help is-danger" id="submitButtonHelper"></p>
                     </p>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        const fileInput = document.querySelector('#file-js-example input[type=file]');
-        fileInput.onchange = () => {
-          if (fileInput.files.length > 0) {
-            const fileName = document.querySelector('#file-js-example .file-name');
-            fileName.textContent = fileInput.files[0].name;
-          }
-        }
-      </script>
 </body>
 
 <!--Footer-->

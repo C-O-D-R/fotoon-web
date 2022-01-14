@@ -2692,12 +2692,12 @@ a.tag:hover {
   overflow: hidden;
   position: relative; }
   .file-label:hover .file-cta {
-    background-color: #eeeeee;
+    background-color: #222222;
     color: #C3073F; }
   .file-label:hover .file-name {
     border-color: #d5d5d5; }
   .file-label:active .file-cta {
-    background-color: #e8e8e8;
+    background-color: #1b1b1b;
     color: #C3073F; }
   .file-label:active .file-name {
     border-color: #cfcfcf; }
@@ -2713,7 +2713,7 @@ a.tag:hover {
 
 .file-cta,
 .file-name {
-  border-color: #dbdbdb;
+  border-color: #282828;
   border-radius: 4px;
   font-size: 1em;
   padding-left: 1em;
@@ -2721,7 +2721,7 @@ a.tag:hover {
   white-space: nowrap; }
 
 .file-cta {
-  background-color: whitesmoke;
+  background-color: #282828;
   color: #FFFFFF; }
 
 .file-name {
