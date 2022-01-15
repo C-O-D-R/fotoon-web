@@ -2,10 +2,16 @@ async function submit() {
     // Variables
     var files = document.getElementById('fileInput').files;
     var submitButton = document.getElementById('submitButton');
+    var shortBio = document.getElementById('shortBioInput');
+    var longBio = document.getElementById('longBioInput');
     var encodedImage;
 
     // Loading Animation
     submitButton.classList.add('is-loading');
+
+    // Checks
+    shortBio = shortBio.value == '' ? shortBio.getAttribute('placeholder') : shortBio.value;
+    longBio = longBio.value == '' ? longBio.getAttribute('placeholder') : longBio.value;
 
     if (files.length > 2) {
         submitButton.classList.remove('is-loading');
@@ -20,6 +26,8 @@ async function submit() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             avatar: encodedImage,
+            shortBio: shortBio,
+            longBio: longBio,
             token: document.cookie.split('=')[1]
         })
     }).then((res) => res.json());
@@ -27,7 +35,7 @@ async function submit() {
     if (response) { 
         submitButton.classList.remove('is-loading');
         if (response.status == 'error') return submitButtonHelper.innerHTML = response.description;
-        if (response.status == 'success') return alert('Avatar uploaded successfully!');
+        if (response.status == 'success') return alert('Changes uploaded successfully!');
     }
 }
 
