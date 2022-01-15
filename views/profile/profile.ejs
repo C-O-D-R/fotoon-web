@@ -13,6 +13,7 @@
   <!--Scripts-->
   <script src="/js/general/navbar.js"></script>
   <script src="/js/user/userScripts.js"></script>
+  <script src="/js/profile/profile.js"></script>
 </head>
 
 <body>
@@ -101,7 +102,17 @@
         <% if(posts[pos] == undefined) posts[pos] = { _id: undefined, image: undefined } %>
         <%var postId=posts[pos]._id == undefined ? ' ' : posts[pos]._id;%>
         <%var postImage=posts[pos].image == undefined ? ' ': posts[pos].image;%>
+        <%var postCaption=posts[pos].caption == undefined ? ' ': posts[pos].caption;%>
         <div class="column">
+            <% if (postId != ' ') { %>
+              <button class="button is-rounded m-2" onclick="deleteImage('<%= postId %>')">
+                <span class="icon is-small">
+                  <i class="fas fa-trash"></i>
+                </span>
+                <h2 class="title is-4"><%= postCaption %></h2>
+              </button>
+
+            <% } %>
             <img src="<%= postImage %>" >
         </div>
         <%pos=pos+1;%>

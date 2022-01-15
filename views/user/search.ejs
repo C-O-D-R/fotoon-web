@@ -13,7 +13,7 @@
     <!--Scripts-->
     <script src="/js/general/navbar.js"></script>
     <script src="/js/user/userScripts.js"></script>
-    <script src="/js/search/search.js"></script>
+    <script src="/js/user/search.js"></script>
 </head>
 
 <body>
@@ -123,11 +123,10 @@
                     </div>
 
                     <% if (user.following.includes(dbUser._id)) { %>
-                        <button class="button is-danger">Unfollow</button>
+                        <button class="button is-danger" onclick="unfollow('<%=dbUser._id%>')">Unfollow</button>
                     <% } else { %>
-                        <button class="button is-primary">Follow</button>
+                        <button class="button is-primary" onclick="follow('<%=dbUser._id%>')">Follow</button>
                     <% } %>
-
                 </div>
             </div>
         </div>
