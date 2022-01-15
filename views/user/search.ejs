@@ -34,7 +34,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" href="/search">
                     Search
                 </a>
 
@@ -74,17 +74,62 @@
         </div>
     </nav>
 
-    <div class="field has-addons">
-        <div class="control">
-            <input class="input" type="text" placeholder="Search a username">
-        </div>
-        <div class="control">
-            <a class="button is-info" onclick="search()">
-                Search
-            </a>
-        </div>
+
+    <div class="control m-3">
+        <input id="searchInput" class="input" type="text" placeholder="Search a username" onkeyup="search()">
     </div>
 
-    
+    <script>
+        function search() {
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('searchInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByClassName('card');
+        
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByClassName("title")[0];
+            txtValue = a.textContent || a.innerText;
 
+            if (!txtValue.toUpperCase().includes(filter)) {
+                li[i].classList.add('is-hidden');
+            } else {
+                li[i].classList.remove('is-hidden');
+            }
+          }
+        }
+    </script>
+
+<ul id="myUL">
+    <% for (var i = 0; i < users.length; i++) { %>
+        <% var dbUser=users[i]; %>
+        <% if (user._id == dbUser._id) continue; %>
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img class="is-rounded" src="<%= users[i].avatar %>">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">
+                            <%= dbUser.username %>
+                        </p>
+
+                        <p class="subtitle is-6">
+                            <%= dbUser.shortBio %>
+                        </p>
+                    </div>
+
+                    <% if (user.following.includes(dbUser._id)) { %>
+                        <button class="button is-danger">Unfollow</button>
+                    <% } else { %>
+                        <button class="button is-primary">Follow</button>
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+    <% } %>
 </body>
