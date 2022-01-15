@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotoon | Profile</title>
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
 
   <!--Stylesheets-->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/profile/style.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/profile/style.css">
 
   <!--Scripts-->
-  <script src="js/general/navbar.js"></script>
-  <script src="js/user/userScripts.js"></script>
+  <script src="/js/general/navbar.js"></script>
+  <script src="/js/user/userScripts.js"></script>
 </head>
 
 <body>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand" id="logo">
       <a class="navbar-item" href="/">
-        <img src="img/logo-big.jpg" width="30" height="30">
+        <img src="/img/logo-big.jpg" width="30" height="30">
         <p class="is-size-4 ml-2"><strong>Fotoon</strong></p>
       </a>
 
@@ -44,8 +44,12 @@
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
+            <figure class="image mr-2">
+                <img id="cropped" class="is-rounded" src="<%= user.avatar %>">
+            </figure>
+
             <%= user.username %>
-          </a>
+        </a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item" href="/post">
@@ -102,7 +106,7 @@
         <%var postId=posts[pos]._id == undefined ? ' ' : posts[pos]._id;%>
         <%var postImage=posts[pos].image == undefined ? ' ': posts[pos].image;%>
         <div class="column">
-          <a href="<%= postId %>">
+          <a href="/post/<%= postId %>">
             <img src="<%= postImage %>" >
           </a>
         </div>

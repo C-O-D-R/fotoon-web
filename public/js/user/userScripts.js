@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.classList.toggle('is-active');
                 $target.classList.toggle('is-active');
 
+                document.getElementById('avatar').classList.toggle('is-hidden');
+
             });
         });
-    }
-
+    } 
 });
+
+function logout() {
+    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.replace('/');
+}

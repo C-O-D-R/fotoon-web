@@ -58,9 +58,3 @@ Router.get('/', authUser, async (req, res) => {
         posts: posts
     });
 });
-
-
-// Specific User
-Router.get('/:id', authUser, async (req, res) => {
-
-});
