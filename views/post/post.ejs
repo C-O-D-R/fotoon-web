@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoon | Post</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/post/style.css">
+    
+    <!--Scripts-->
+    <script src="/js/general/navbar.js"></script>
+    <script src="/js/post/post.js"></script>
+    <script src="/js/user/userScripts.js"></script></head>
+
+<body background="<%= post.image %>">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand" id="logo">
+            <a class="navbar-item" href="/">
+                <img src="/img/logo-big.jpg" width="30" height="30">
+                <p class="is-size-4 ml-2"><strong>Fotoon</strong></p>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Search
+                </a>
+
+                <a class="navbar-item" href="/newpost">
+                    Create a Post
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+
+                        <%= user.username %>
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/post">
+                            Posts
+                        </a>
+
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+
+                        <a class="navbar-item" href="/account">
+                            Account
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item" onclick="logout()">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="center-card">
+        <div class="card m-3">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img class="is-rounded" src="<%= postOwner.avatar %>">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">
+                            <%= postOwner.username %>
+                        </p>
+                        <p class="subtitle is-6">
+                            <%= post.caption %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href= "/post/previous/<%= post._id %>">
+        <button class="button is-rounded m-2">Previous</button>
+    </a>
+
+    <a href="/post/next/<%= post._id %>">
+        <button class="button is-primary is-rounded m-2">Next</button>
+    </a>
+
+</body>
