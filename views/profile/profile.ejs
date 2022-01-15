@@ -44,10 +44,6 @@
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            <figure class="image mr-2">
-                <img id="cropped" class="is-rounded" src="<%= user.avatar %>">
-            </figure>
-
             <%= user.username %>
         </a>
 
@@ -106,9 +102,7 @@
         <%var postId=posts[pos]._id == undefined ? ' ' : posts[pos]._id;%>
         <%var postImage=posts[pos].image == undefined ? ' ': posts[pos].image;%>
         <div class="column">
-          <a href="/post/<%= postId %>">
             <img src="<%= postImage %>" >
-          </a>
         </div>
         <%pos=pos+1;%>
       <%}%>

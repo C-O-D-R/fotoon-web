@@ -44,7 +44,6 @@ async function submit() {
     if (files.length > 0) encodedImage = await encode(files[0]);
 
     // API
-    console.log(document.cookie.split('=')[1])
     var response = await fetch('https://api.fotoon.app/post', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -57,7 +56,6 @@ async function submit() {
 
     if (response) { 
         submitButton.classList.remove('is-loading');
-        console.log(response)
         if (response.status == 'error') return submitButtonHelper.innerHTML = response.description;
         if (response.status == 'success') return alert('Image uploaded successfully!');
     }
