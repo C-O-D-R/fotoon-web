@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #191A19; 
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#logo a {
+    color: #950740;
+    text-decoration: none;
+}

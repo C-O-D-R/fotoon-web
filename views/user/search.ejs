@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoon | Search</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/account/style.css">
+
+    <!--Scripts-->
+    <script src="/js/general/navbar.js"></script>
+    <script src="/js/user/userScripts.js"></script>
+    <script src="/js/user/search.js"></script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand" id="logo">
+            <a class="navbar-item" href="/">
+                <img src="/img/logo-big.jpg" width="30" height="30">
+                <p class="is-size-4 ml-2"><strong>Fotoon</strong></p>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/search">
+                    Search
+                </a>
+
+                <a class="navbar-item" href="/newpost">
+                    Create a Post
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+
+                        <%= user.username %>
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/post">
+                            Posts
+                        </a>
+
+                        <a class="navbar-item" href="/profile">
+                            Profile
+                        </a>
+
+                        <a class="navbar-item" href="/account">
+                            Account
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item" onclick="logout()">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="control m-3">
+        <input id="searchInput" class="input" type="text" placeholder="Search a username" onkeyup="search()">
+    </div>
+
+    <script>
+        function search() {
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('searchInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByClassName('card');
+        
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByClassName("title")[0];
+            txtValue = a.textContent || a.innerText;
+
+            if (!txtValue.toUpperCase().includes(filter)) {
+                li[i].classList.add('is-hidden');
+            } else {
+                li[i].classList.remove('is-hidden');
+            }
+          }
+        }
+    </script>
+
+<ul id="myUL">
+    <% for (var i = 0; i < users.length; i++) { %>
+        <% var dbUser=users[i]; %>
+        <% if (user._id == dbUser._id) continue; %>
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img class="is-rounded" src="<%= users[i].avatar %>">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">
+                            <%= dbUser.username %>
+                        </p>
+
+                        <p class="subtitle is-6">
+                            <%= dbUser.shortBio %>
+                        </p>
+                    </div>
+
+                    <% if (user.following.includes(dbUser._id)) { %>
+                        <button class="button is-danger" onclick="unfollow('<%=dbUser._id%>')">Unfollow</button>
+                    <% } else { %>
+                        <button class="button is-primary" onclick="follow('<%=dbUser._id%>')">Follow</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</body>

@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+// ----------------------------------------------------------------
+// Bulma
+// ----------------------------------------------------------------
+// Colors
+$white: #FFFFFF;
+$darklight: #282828;
+$darkdark: #191A19;
+$bluelight: #3500D3;
+$bluedark: #240090;
+$redlight: #C3073F;
+$reddark: #950740;
+
+// Card
+$card-background-color: $darkdark;
+
+// Footer
+$footer-background-color: $darkdark;
+$footer-padding: 0.5em;
+
+// Text
+$text: $white;
+$text-strong: $redlight;
+
+// Link
+$link: $bluedark;
+$link-visited: $bluedark;
+$link-hover: $bluelight;
+
+// Input
+$input-color: $white;
+$input-background-color: $darklight;
+$input-border-color: $darklight;
+$input-hover-border-color: $redlight;
+$input-focus-border-color: $redlight;
+$input-focus-box-shadow-color: $reddark;
+$input-focus-box-shadow-size: 0 0 0 0.05em;
+
+$input-disabled-color: $white;
+$input-disabled-background-color: $darklight;
+$input-disabled-border-color: $darklight;
+// Navbar
+$navbar-background-color: $darklight;
+$navbar-box-shadow-size: 0 0 0 0;
+$navbar-item-hover-color: $reddark;
+$navbar-dropdown-arrow: $reddark;
+$navbar-item-hover-background-color: $darkdark;
+
+$navbar-dropdown-border-top: 0px;
+$navbar-divider-background-color: $redlight;
+$navbar-dropdown-background-color: $darklight;
+$navbar-dropdown-item-hover-color: $reddark;
+$navbar-dropdown-item-hover-background-color: $darkdark;
+
+// File Upload
+$file-cta-background-color: $darklight;
+$file-border-color: $darklight;
+
+// Bulma Import
+@import "../node_modules/bulma/bulma.sass";
+
+
+// ----------------------------------------------------------------
+// Font Awesome
+// ----------------------------------------------------------------
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+
